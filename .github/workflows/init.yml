@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: DoSomething
+      run: |
+        wget https://github.com/linuxkit/linuxkit/releases/download/v1.2.0/linuxkit-linux-amd64
+        chmod +x linuxkit-linux-amd64
+        ./linuxkit-linux-amd64 --version
+        ./linuxkit-linux-amd64 --help
