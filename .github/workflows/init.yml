@@ -12,9 +12,8 @@ jobs:
       run: |
         wget https://github.com/linuxkit/linuxkit/releases/download/v1.2.0/linuxkit-linux-amd64
         chmod +x linuxkit-linux-amd64
-        ./linuxkit-linux-amd64 --help
-        ./linuxkit-linux-amd64 build foo.yaml
+        ./linuxkit-linux-amd64 --verbose build foo.yaml
     - uses: actions/upload-artifact@v4
       with:
         name: linux
-        path: foo.*
+        path: foo*
